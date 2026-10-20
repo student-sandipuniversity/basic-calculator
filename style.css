@@ -1,0 +1,159 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+}
+
+.calculator {
+  width: 100%;
+  max-width: 370px;
+  padding: 24px;
+  background: #172033;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px #17203340;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 22px;
+}
+
+.header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 13px;
+  color: #a8b4cc;
+}
+
+.display {
+  min-height: 115px;
+  padding: 18px 14px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: #0b1220;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.expression {
+  width: 100%;
+  min-height: 22px;
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.screen {
+  max-width: 100%;
+  font-size: clamp(30px, 8vw, 40px);
+  font-weight: bold;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+button {
+  min-width: 0;
+  height: 58px;
+  border: none;
+  border-radius: 13px;
+  background: #28354b;
+  color: white;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease,
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: #40516c;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.utility {
+  background: #475569;
+}
+
+.operator {
+  background: #2563eb;
+}
+
+.operator:hover {
+  background: #3b82f6;
+}
+
+.equals {
+  background: #16a34a;
+}
+
+.equals:hover {
+  background: #22c55e;
+}
+
+.keyboard-help {
+  margin-top: 18px;
+  color: #a8b4cc;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 17px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  button {
+    height: 53px;
+    border-radius: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
